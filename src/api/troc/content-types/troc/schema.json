@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trocs",
+  "info": {
+    "singularName": "troc",
+    "pluralName": "trocs",
+    "displayName": "troc",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "biginteger",
+      "required": true,
+      "default": "0"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::troc-comment.troc-comment",
+      "mappedBy": "troc"
+    },
+    "likes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::liked-troc.liked-troc",
+      "mappedBy": "troc"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "trocs"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "offre",
+        "demande"
+      ],
+      "default": "offre",
+      "required": true
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "trocs"
+    },
+    "vues": {
+      "type": "biginteger",
+      "required": true,
+      "default": "0"
+    }
+  }
+}

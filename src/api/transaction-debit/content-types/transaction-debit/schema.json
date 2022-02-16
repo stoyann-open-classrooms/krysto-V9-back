@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transaction_debits",
+  "info": {
+    "singularName": "transaction-debit",
+    "pluralName": "transaction-debits",
+    "displayName": "transactionDebit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "transaction_credit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::transaction.transaction",
+      "mappedBy": "transaction_debit"
+    },
+    "archived": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "price": {
+      "type": "biginteger",
+      "default": "0",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "transaction_debits"
+    }
+  }
+}

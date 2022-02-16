@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "troc_comments",
+  "info": {
+    "singularName": "troc-comment",
+    "pluralName": "troc-comments",
+    "displayName": "trocComment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "troc": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::troc.troc",
+      "inversedBy": "comments"
+    },
+    "comment": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

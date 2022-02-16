@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "liked_trocs",
+  "info": {
+    "singularName": "liked-troc",
+    "pluralName": "liked-trocs",
+    "displayName": "likedTroc",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "troc": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::troc.troc",
+      "inversedBy": "likes"
+    }
+  }
+}

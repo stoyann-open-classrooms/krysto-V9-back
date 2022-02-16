@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plastic_collects",
+  "info": {
+    "singularName": "plastic-collect",
+    "pluralName": "plastic-collects",
+    "displayName": "plasticCollect",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "collectDate": {
+      "type": "date"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "toConfirm",
+        "progress",
+        "done"
+      ],
+      "default": "toConfirm",
+      "required": true
+    },
+    "PP": {
+      "type": "integer"
+    },
+    "HDPE": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "PS": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "archived": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "profile": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::profile.profile",
+      "inversedBy": "plastic_collects"
+    }
+  }
+}

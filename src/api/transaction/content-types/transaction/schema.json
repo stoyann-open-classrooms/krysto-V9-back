@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "transactionCredit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "archived": {
+      "type": "boolean",
+      "default": false
+    },
+    "transaction_debit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::transaction-debit.transaction-debit",
+      "inversedBy": "transaction_credit"
+    },
+    "price": {
+      "type": "biginteger",
+      "required": true,
+      "default": "0"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "transaction_credits"
+    }
+  }
+}
