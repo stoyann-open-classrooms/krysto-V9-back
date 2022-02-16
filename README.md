@@ -1,4 +1,4 @@
-# Billapp backend
+# Krysto backend
 
 ================ FR ====================
 
@@ -7,13 +7,13 @@
 ### Cloner le projet:
 
 ```
-git clone https://github.com/OpenClassrooms-Student-Center/Billed-app-FR-Back.git
+git clone https://github.com/stoyann-open-classrooms/krysto-V9-back.git
 ```
 
 ### Acceder au repertoire du projet :
 
 ```
-cd krysto-app-FR-Back
+cd krysto-app-v9-Back
 ```
 
 ### Installer les dépendances du projet :
@@ -34,6 +34,7 @@ L'api est accessible sur le port `1337` en local, c'est à dire `http://localhos
 
 ## Utilisateurs par défaut:
 
+```
 utilisateur : omail
 mot de passe : azerty
 
@@ -42,15 +43,7 @@ mot de passe : azerty
 
 ```
 
-
-
-
-
-
-
 # En savoir plus sur Strapi
-
-
 
 ## 🚀 Getting started with Strapi
 
@@ -121,4 +114,7 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
+```
+
 ```
